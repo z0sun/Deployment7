@@ -37,13 +37,9 @@ python setup.py
 }
 stage ('Reminder') {
 steps {
-sh '
-echo '''
-##############################################################
-# The Application should be running on your other instance!! #
-##############################################################
+sh '''#!/bin/bash
+echo -e "##############################################################\n # The Application should be running on your other instance!! #\n ##############################################################"
 '''
-'
 }
 }
 }
