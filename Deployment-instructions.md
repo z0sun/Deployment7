@@ -34,6 +34,6 @@
 6. Check the application on the second instance!!
 7. Now make a change to the HTML and then run the Jenkinsfilev2 
 8. How did you decide to run the Jenkinsfilev2?
-9. What kind of automated script would you create for this deployment?
-10. Why did you place both instances in the same subnet? Or why did you place one instance in one subnet and the other in another subnet?
+9. What kind of automated script did you create for this deployment?
+10. Should you place both instances in the public subnet? Or should you place them in a private subnet? Explain why?
 
