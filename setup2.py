@@ -7,7 +7,7 @@ client.load_system_host_keys()
 
 client.set_missing_host_key_policy(AutoAddPolicy())
 
-client.connect("54.224.191.185", username="ubuntu")
+client.connect("54.80.105.6", username="ubuntu")
 
 stdin, stdout, stderr = client.exec_command('''
                                             cd c4_deployment-5
