@@ -14,7 +14,7 @@ pip install -r requirements.txt
 stage ('test') {
 steps {
 sh '''#!/bin/bash
-source test1/bin/activate
+source test/bin/activate
 pip install pytest
 pytest --verbose --junit-xml test-reports/results.xml
 '''
@@ -28,6 +28,7 @@ junit 'test-reports/results.xml'
 stage ('Deploy') {
 steps {
 sh '''#!/bin/bash
+source test/bin/activate
 pip install paramiko
 pip install rich
 python setup.py
@@ -37,9 +38,11 @@ python setup.py
 stage ('Reminder') {
 steps {
 sh '''#!/bin/bash
+echo '''
 ##############################################################
 # The Application should be running on your other instance!! #
 ##############################################################
+'''
 '''
 }
 }
