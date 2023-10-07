@@ -12,7 +12,7 @@ client.connect("54.80.105.6", username="ubuntu")
 stdin, stdout, stderr = client.exec_command('''
                                             cd c4_deployment-5
                                             chmod 700 Pkill.sh
-                                            ./Pkill.sh
+                                            ./Pkill.sh && echo "Done"
                                             ''')
 
 print(stdout.read().decode("utf-8"))
