@@ -13,10 +13,12 @@
 2. For the first instance follow the below instructions:
 ```
 - Install Jenkins
+- Create a Jenkins user password and log into the Jenkins user (Review Deployment 3 on how to do this)
 - Create a public and private key on this instance with ssh-keygen
 - Copy the public key contents and paste it into the second instance authorized_keys
-- Test the ssh connection 
-- Now install the following: {sudo apt install -y software-properties-common, sudo add-apt-repository -y ppa:deadsnakes/ppa, sudo apt install -y python3.7,  sudo apt install -y python3.7-venv,}
+- Test the ssh connection
+- Exit the jenkins user
+- Now, in the ubuntu user, install the following: {sudo apt install -y software-properties-common, sudo add-apt-repository -y ppa:deadsnakes/ppa, sudo apt install -y python3.7, sudo apt install -y python3.7-venv}
 ```
 3. On the second instance, install the following:
 ```
@@ -27,7 +29,6 @@
 - setup.py: client.connect(**Your Public IP**, username="ubuntu")
 - setup2.py: client.connect(**Your Public IP**, username="ubuntu")
 - setup3.py: client.connect(**Your Public IP**, username="ubuntu")
-- Jenkinsfilev2: scp Pkill.sh ubuntu@**Your Public IP**:/home/ubuntu/c4_deployment-5
 ```
 5. Create a Jenkins multibranch pipeline and run the Jenkinsfilev1 
 6. Check the application on the second instance!!
