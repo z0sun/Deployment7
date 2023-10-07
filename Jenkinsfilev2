@@ -4,6 +4,7 @@ pipeline {
     stage ('Clean') {
       steps {
         sh '''#!/bin/bash
+        source test/bin/activate
         python setup2.py
         '''
      }
