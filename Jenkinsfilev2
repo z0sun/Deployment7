@@ -4,14 +4,14 @@ pipeline {
     stage ('Clean') {
       steps {
         sh '''#!/bin/bash
-        ssh ubuntu@54.242.110.219 'wget https://raw.githubusercontent.com/kura-labs-org/c4_deployment-5/main/pkill.sh && chmod 700 pkill.sh && ./pkill.sh'
+        echo "command to run the pkill.sh"
         '''
      }
    }
  stage ('Deploy') {
   steps {
      sh '''#!/bin/bash
-     echo ""
+     echo "command to run the setup2.sh"
     '''
       }
     }
