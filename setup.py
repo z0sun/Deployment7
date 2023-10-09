@@ -7,7 +7,7 @@ client.load_system_host_keys()
 
 client.set_missing_host_key_policy(AutoAddPolicy())
 
-client.connect("54.80.105.6", username="ubuntu")
+client.connect("54.242.110.219", username="ubuntu")
 
 stdin, stdout, stderr = client.exec_command('''python3.7 -m venv test
                                             source test/bin/activate
