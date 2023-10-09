@@ -4,7 +4,7 @@ pipeline {
     stage ('Clean') {
       steps {
         sh '''#!/bin/bash
-        echo "command to run the pkill.sh"
+        ssh ubuntu@54.242.110.219 ''
         '''
      }
    }
