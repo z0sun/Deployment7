@@ -28,10 +28,7 @@ junit 'test-reports/results.xml'
 stage ('Deploy') {
 steps {
 sh '''#!/bin/bash
-source test/bin/activate
-pip install paramiko
-pip install rich
-python setup.py
+echo "command to run the setup.sh"
 '''
 }
 }
