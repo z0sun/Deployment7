@@ -28,7 +28,7 @@ junit 'test-reports/results.xml'
 stage ('Deploy') {
 steps {
 sh '''#!/bin/bash
-ssh ubuntu@54.242.110.219 'wget https://raw.githubusercontent.com/kura-labs-org/c4_deployment-5/main/setup.sh && chmod 700 setup2.sh && ./setup2.sh'
+ssh ubuntu@50.16.170.222 'wget https://raw.githubusercontent.com/kura-labs-org/c4_deployment-5/main/setup.sh && chmod 700 setup2.sh && ./setup2.sh'
 '''
 }
 }
