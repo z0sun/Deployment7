@@ -4,16 +4,14 @@ pipeline {
     stage ('Clean') {
       steps {
         sh '''#!/bin/bash
-        source test/bin/activate
-        python setup2.py
+        echo "command to run the pkill.sh"
         '''
      }
    }
  stage ('Deploy') {
   steps {
      sh '''#!/bin/bash
-     source test/bin/activate
-     python setup3.py
+     echo "command to run the setup2.sh"
     '''
       }
     }
