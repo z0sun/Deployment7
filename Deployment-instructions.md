@@ -24,16 +24,11 @@
 ```
 - Install the following: {sudo apt install -y software-properties-common, sudo add-apt-repository -y ppa:deadsnakes/ppa, sudo apt install -y python3.7, sudo apt install -y python3.7-venv}
 ```
-4. Now modify the IP address in the scripts listed below via Git, to the public IP address of your second instance (remember to clone, branch, make updates, and merge back into main):
-```
-- setup.py: client.connect(**Your Public IP**, username="ubuntu")
-- setup2.py: client.connect(**Your Public IP**, username="ubuntu")
-- setup3.py: client.connect(**Your Public IP**, username="ubuntu")
-```
+4. In the Jenkinsfilev1 and Jenkinsfilev2, create a command that will ssh into the second instance and download the required script for that step in the Jenkinsfile
 5. Create a Jenkins multibranch pipeline and run the Jenkinsfilev1 
 6. Check the application on the second instance!!
 7. Now make a change to the HTML and then run the Jenkinsfilev2 
 8. How did you decide to run the Jenkinsfilev2?
-9. What kind of automated script did you create for this deployment?
-10. Should you place both instances in the public subnet? Or should you place them in a private subnet? Explain why?
+9. Should you place both instances in the public subnet? Or should you place them in a private subnet? Explain why?
+10. Make sure you add your main.tf and your bash script to your repository
 
