@@ -30,5 +30,5 @@
 7. Now make a change to the HTML and then run the Jenkinsfilev2 
 8. How did you decide to run the Jenkinsfilev2?
 9. Should you place both instances in the public subnet? Or should you place them in a private subnet? Explain why?
-10. Make sure you add your main.tf and your bash script to your repository
+10. Make sure you add your main.tf to your repository
 
