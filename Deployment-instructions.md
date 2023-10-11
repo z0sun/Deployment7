@@ -24,7 +24,7 @@
 ```
 - Install the following: {sudo apt install -y software-properties-common, sudo add-apt-repository -y ppa:deadsnakes/ppa, sudo apt install -y python3.7, sudo apt install -y python3.7-venv}
 ```
-4. In the Jenkinsfilev1 and Jenkinsfilev2, create a command that will ssh into the second instance and download the required script for that step in the Jenkinsfile
+4. In the Jenkinsfilev1 and Jenkinsfilev2, create a command that will ssh into the second instance and download and run the required script for that step in the Jenkinsfile
 5. Create a Jenkins multibranch pipeline and run the Jenkinsfilev1 
 6. Check the application on the second instance!!
 7. Now make a change to the HTML and then run the Jenkinsfilev2 
