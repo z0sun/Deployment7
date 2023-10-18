@@ -9,7 +9,7 @@ Base = declarative_base()
 
 class Users(Base):
     __tablename__ = 'users'
-    id = Column(String, primary_key=True)
+    id = Column(String(250), primary_key=True)
     name = Column(String(250),nullable=False)
     user_type = Column(String(250), nullable=False)
     password = Column(String(250))
@@ -51,5 +51,8 @@ class Transactions(Base):
     amount = Column(Integer, nullable=False)
     time_stamp = Column(DateTime(timezone=False), default=datetime.datetime.utcnow)
     
-engine = create_engine('sqlite:///database.db')
+#engine = create_engine('sqlite:///database.db')
+#Base.metadata.create_all(engine)
+DATABASE_URL = 'mysql+mysqldb://admin:user1234@database.cb2i8v4whxlv.us-east-1.rds.amazonaws.com/amazon?charset=utf8mb4'
+engine = create_engine(DATABASE_URL, pool_pre_ping=True, echo=True)
 Base.metadata.create_all(engine)
