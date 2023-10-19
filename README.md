@@ -1,7 +1,7 @@
 <p align="center">
 <img src="https://github.com/kura-labs-org/kuralabs_deployment_1/blob/main/Kuralogo.png">
 </p>
-<h1 align="center">C4_deployment-5<h1> 
+<h1 align="center">C4_deployment-6<h1> 
 
 Demonstrate your ability to deploy an infrastructure with Terraform.
 
@@ -23,4 +23,4 @@ Demonstrate your ability to deploy an infrastructure with Terraform.
 - Lastly, save your documentation and diagram into your repository. Submit your repository link to the LMS
 
 ## Deployment instructions Link:
--  Link to instructions: 
+-  Link to instructions: https://github.com/kura-labs-org/c4_deployment-6.git
