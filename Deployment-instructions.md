@@ -22,8 +22,10 @@ Instance 2:
 - The following must be installed for the application to run: software-properties-common, add-apt-repository -y ppa:deadsnakes/ppa, python3.7, python3.7-venv, build-essential, libmysqlclient-dev, python3.7-dev
 - Once you activate the virtual environment, the following must be installed: pip install mysqlclient, pip install gunicorn
 ```
-3. Now create an RDS database: instructions here
+3. Now create an RDS database: [instructions here](https://scribehow.com/shared/How_to_Create_an_AWS_RDS_Database__zqPZ-jdRTHqiOGdhjMI8Zw)
 4. Change the following MySQL endpoints to your endpoints:
+   - The naming scheme you'll need to enter in each file:
+       
    - database.py:
      ![image](https://github.com/kura-labs-org/c4_deployment-6/blob/main/database.png)
      
