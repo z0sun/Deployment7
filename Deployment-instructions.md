@@ -40,6 +40,6 @@ Instance 2:
 8. Check your infrastructure and applications (test the applications)
 9. Once you've deployed to US-east-1, place your terraform files of US-west-2 in the intTerraform2 directory
 10. Figure out how to edit the Jenkinsfile to deploy US-west-2
-11. Once you've deployed to both regions, create an application load balancer for US-east-1 and US-west-2: instructions here
+11. Once you've deployed to both regions, create an application load balancer for US-east-1 and US-west-2: [instructions here](https://scribehow.com/shared/Creating_Load_Balancer_with_Target_Groups_for_EC2_Instances__WjPUNqE4SLCpkcYRouPjjA)
 12. With both infrastructures deployed, is there anything else we should add to our infrastructure?  
 
