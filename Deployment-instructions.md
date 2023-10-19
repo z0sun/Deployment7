@@ -32,7 +32,7 @@ Instance 2:
 6. Now place your Terraform files for US-east-1 in the inTerraform directory
 7. Create a multibranch pipeline and run the Jenkinsfile 
 8. Check your infrastructure and applications (test the applications)
-9. Once you deployed US-east-1, place your terraform files of US-west-2 in intTerraform2 directory
+9. Once you've deployed to US-east-1, place your terraform files of US-west-2 in the intTerraform2 directory
 10. Figure out how to edit the Jenkinsfile to deploy US-west-2
 11. Once you've deployed to both regions, create an application load balancer for US-east-1 and US-west-2: instructions here
 12. With both infrastructures deployed, is there anything else we should add to this infrastructure?  
