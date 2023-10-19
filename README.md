@@ -3,7 +3,7 @@
 </p>
 <h1 align="center">C4_deployment-5<h1> 
 
-Demonstrate your ability to deploy a NEW flask application to an EC2 instance.
+Demonstrate your ability to deploy an infrastructure with Terraform.
 
 - Create a separate GitHub repository for this application 
 
@@ -23,5 +23,4 @@ Demonstrate your ability to deploy a NEW flask application to an EC2 instance.
 - Lastly, save your documentation and diagram into your repository. Submit your repository link to the LMS
 
 ## Deployment instructions Link:
--  Link to instructions: https://github.com/kura-labs-org/c4_deployment-5/blob/main/Deployment-instructions.md
-hello
+-  Link to instructions: 
