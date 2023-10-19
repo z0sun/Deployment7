@@ -24,9 +24,15 @@ Instance 2:
 ```
 3. Now create an RDS database: instructions here
 4. Change the following MySQL endpoints to your endpoints:
-   - database.py
+   - database.py:
+     ![image](https://github.com/kura-labs-org/c4_deployment-6/blob/main/database.png)
+     
    - load_data.py
+     ![image](https://github.com/kura-labs-org/c4_deployment-6/blob/main/load.png)
+     
    - app.py
+     ![image](https://github.com/kura-labs-org/c4_deployment-6/blob/main/app.png)
+     
 4. **Note:** Once you've deployed the application the first time, you will not need to load the database files again
 5. Configure your AWS credentials in Jenkins: [instructions here](https://scribehow.com/shared/How_to_Securely_Configure_AWS_Access_Keys_in_Jenkins__MNeQvA0RSOWj4Ig3pdzIPw)
 6. Now place your Terraform files for US-east-1 in the inTerraform directory
