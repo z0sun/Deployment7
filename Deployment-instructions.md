@@ -3,13 +3,13 @@
 </p>
 
 ## Deployment Instructions:
-1. Create 2 instances in your default VPC (see below for more information)
+1. Create 2 instances in your default VPC for a Jenkins manager and agent architecture (see below for more information)
 2. The following must be installed:
 ```
 Instance 1:
 - Jenkins, software-properties-common, add-apt-repository -y ppa:deadsnakes/ppa, python3.7, python3.7-venv, build-essential, libmysqlclient-dev, python3.7-dev
 Instance 2:
-- Terraform
+- Terraform and default-jre
 ```
 4. Create two VPCs with Terraform, 1 VPC in US-east-1 and the other VPC in US-west-2. **MUST** have the following components in each VPC:
     - 2 AZ's
