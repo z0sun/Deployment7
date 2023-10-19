@@ -27,7 +27,7 @@ Instance 2:
    - database.py
    - load_data.py
    - app.py
-4. **Note:** Once you deploy the application the first time, you will not need to load the database files again
+4. **Note:** Once you've deployed the application the first time, you will not need to load the database files again
 5. Configure your AWS credentials in Jenkins: instructions here
 6. Now place your Terraform files for US-east-1 in the inTerraform directory
 7. Create a multibranch pipeline and run the Jenkinsfile 
