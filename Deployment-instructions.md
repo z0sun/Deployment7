@@ -23,7 +23,7 @@ Instance 2:
 - Once you activate the virtual environment, the following must be installed: pip install mysqlclient, pip install gunicorn
 ```
 3. Now create an RDS database: instructions here
-4. Change the following MySQL endpoints to your endpoint:
+4. Change the following MySQL endpoints to your endpoints:
    - database.py
    - load_data.py
    - app.py
