@@ -3,8 +3,21 @@
 </p>
 
 ## Deployment Instructions:
-1. Create 2 instances in your default VPC for a Jenkins manager and agent architecture (see below for more information)
-2. The following must be installed:
+1. Follow the naming convention below for all resources created in AWS:
+```
+VPC:
+- deplpoyment#-vpc-region, example: deployment6-vpc-east
+Instances:
+- Function#-region, example: applicationServer01-east, applicationServer02-east
+Security Groups:
+- purposeSG, example: HttpAcessSG
+Subnets:
+- purposeSubnet#, example: publicSubnet01
+Load Balancer:
+- purpose-region, example: ALB-east
+```
+3.  Use Terraform to create 2 instances in your default VPC for a Jenkins manager and agent architecture (see below for more information)
+4. The following must be installed:
 ```
 Instance 1:
 - Jenkins, software-properties-common, add-apt-repository -y ppa:deadsnakes/ppa, python3.7, python3.7-venv, build-essential, libmysqlclient-dev, python3.7-dev
