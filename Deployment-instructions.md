@@ -17,7 +17,7 @@ Instance 2:
     - 2 EC2's
     - 1 Route Table
     - Security Group Ports: 8000 and 22     
-4. Create a script that will install and deploy the Banking application for each instance
+4. Create a script that will install the dependencies below and deploy the Banking application:
 ```
 - The following must be installed for the application to run: software-properties-common, add-apt-repository -y ppa:deadsnakes/ppa, python3.7, python3.7-venv, build-essential, libmysqlclient-dev, python3.7-dev
 - Once you activate the virtual environment, the following must be installed: pip install mysqlclient, pip install gunicorn
