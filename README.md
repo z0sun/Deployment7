@@ -23,4 +23,4 @@ Demonstrate your ability to deploy an infrastructure with Terraform.
 - Lastly, save your documentation and diagram into your repository. Submit your repository link to the LMS
 
 ## Deployment instructions Link:
--  Link to instructions: https://github.com/kura-labs-org/c4_deployment-6.git
+-  Link to instructions: https://github.com/kura-labs-org/c4_deployment-6/blob/main/Deployment-instructions.md
