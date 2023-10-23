@@ -161,7 +161,7 @@ resource "aws_instance" "prob_web" {
   instance_type          = "t2.micro"
   subnet_id              = aws_subnet.subnet1.id
   vpc_security_group_ids = [aws_security_group.prob_http.id]
-  key_name               = "Cali"
+  key_name               = "new"
 
   user_data = file("setup.sh")
 
@@ -177,7 +177,7 @@ resource "aws_instance" "prob_web2" {
   instance_type          = "t2.micro"
   subnet_id              = aws_subnet.subnet2.id
   vpc_security_group_ids = [aws_security_group.prob_http.id]
-  key_name               = "Cali"
+  key_name               = "new"
 
   user_data = file("setup.sh")
 
