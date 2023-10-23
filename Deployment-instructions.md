@@ -16,27 +16,27 @@ Subnets:
 Load Balancer:
 - purpose-region, example: ALB-east
 ```
-3.  Use Terraform to create 2 instances in your default VPC for a Jenkins manager and agent architecture (see below for more information)
-4. The following must be installed:
+2.  Use Terraform to create 2 instances in your default VPC for a Jenkins manager and agent architecture (see below for more information)
+3. The following must be installed:
 ```
 Instance 1:
 - Jenkins, software-properties-common, add-apt-repository -y ppa:deadsnakes/ppa, python3.7, python3.7-venv, build-essential, libmysqlclient-dev, python3.7-dev
 Instance 2:
 - Terraform and default-jre
 ```
-3. Create two VPCs with Terraform, 1 VPC in US-east-1 and the other VPC in US-west-2. **MUST** have the following components in each VPC:
+4. Create two VPCs with Terraform, 1 VPC in US-east-1 and the other VPC in US-west-2. **MUST** have the following components in each VPC:
     - 2 AZ's
     - 2 Public Subnets
     - 2 EC2's
     - 1 Route Table
     - Security Group Ports: 8000 and 22     
-4. Create a script that will install the dependencies below and deploy the Banking application:
+5. Create a script that will install the dependencies below and deploy the Banking application:
 ```
 - The following must be installed for the application to run: software-properties-common, add-apt-repository -y ppa:deadsnakes/ppa, python3.7, python3.7-venv, build-essential, libmysqlclient-dev, python3.7-dev
 - Once you activate the virtual environment, the following must be installed: pip install mysqlclient, pip install gunicorn
 ```
-5. Now create an RDS database: [instructions here](https://scribehow.com/shared/How_to_Create_an_AWS_RDS_Database__zqPZ-jdRTHqiOGdhjMI8Zw)
-6. Change the following MySQL endpoints to your endpoints for each file listed below:
+6. Now create an RDS database: [instructions here](https://scribehow.com/shared/How_to_Create_an_AWS_RDS_Database__zqPZ-jdRTHqiOGdhjMI8Zw)
+7. Change the following MySQL endpoints to your endpoints for each file listed below:
    - The red, blue, and green areas of the DATABASE_URL you'll need to edit:
        ![image](https://github.com/kura-labs-org/c4_deployment-6/blob/main/format.png)
    - database.py:
@@ -48,13 +48,13 @@ Instance 2:
    - app.py
      ![image](https://github.com/kura-labs-org/c4_deployment-6/blob/main/app.png)
      
-7. **Note:** Once you've deployed the application the first time, you will not need to load the database files again
-8. Configure your AWS credentials in Jenkins: [instructions here](https://scribehow.com/shared/How_to_Securely_Configure_AWS_Access_Keys_in_Jenkins__MNeQvA0RSOWj4Ig3pdzIPw)
-9. Now place your Terraform files for US-east-1 in the inTerraform directory
-10. Create a multibranch pipeline and run the Jenkinsfile 
-11. Check your infrastructure and applications (test the applications)
-12. Once you've deployed to US-east-1, place your terraform files of US-west-2 in the intTerraform2 directory
-13. Figure out how to edit the Jenkinsfile to deploy US-west-2
-14. Once you've deployed to both regions, create an application load balancer for US-east-1 and US-west-2: [instructions here](https://scribehow.com/shared/Creating_Load_Balancer_with_Target_Groups_for_EC2_Instances__WjPUNqE4SLCpkcYRouPjjA)
-15. With both infrastructures deployed, is there anything else we should add to our infrastructure?  
+8. **Note:** Once you've deployed the application the first time, you will not need to load the database files again
+9. Configure your AWS credentials in Jenkins: [instructions here](https://scribehow.com/shared/How_to_Securely_Configure_AWS_Access_Keys_in_Jenkins__MNeQvA0RSOWj4Ig3pdzIPw)
+10. Now place your Terraform files for US-east-1 in the inTerraform directory
+11. Create a multibranch pipeline and run the Jenkinsfile 
+12. Check your infrastructure and applications (test the applications)
+13. Once you've deployed to US-east-1, place your terraform files of US-west-2 in the intTerraform2 directory
+14. Figure out how to edit the Jenkinsfile to deploy US-west-2
+15. Once you've deployed to both regions, create an application load balancer for US-east-1 and US-west-2: [instructions here](https://scribehow.com/shared/Creating_Load_Balancer_with_Target_Groups_for_EC2_Instances__WjPUNqE4SLCpkcYRouPjjA)
+16. With both infrastructures deployed, is there anything else we should add to our infrastructure?  
 
