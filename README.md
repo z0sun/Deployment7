@@ -17,7 +17,7 @@ Demonstrate your ability to deploy an infrastructure with Terraform.
   - Purpose
   - Issues
   - Steps
-  - System Diagram (Your diagram must include the default VPC, Region East and West VPCs)
+  - System Diagram (Your diagram must include the default VPC, Regions East and West VPCs)
   - Optimization (How would make this deployment more efficient, if you utilize ChatGPT make sure to explain what your prompt was.)
 
 - Lastly, save your documentation and diagram into your repository. Submit your repository link to the LMS
