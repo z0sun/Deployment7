@@ -6,9 +6,9 @@
 1. Follow the naming convention below for all resources created in AWS:
 ```
 VPC:
-- deplpoyment#-vpc-region, example: deployment6-vpc-east
+- deplpoyment#-vpc-prod, example: deployment6-vpc-prod
 Instances:
-- Function#-region, example: applicationServer01-east, applicationServer02-east
+- Function#-prod, example: jenkinsServer01-prod
 Security Groups:
 - purposeSG, example: HttpAcessSG
 Subnets:
@@ -24,35 +24,28 @@ Instance 1:
 Instance 2:
 - Terraform and default-jre
 ```
-4. Create two VPCs with Terraform, 1 VPC in US-east-1 and the other VPC in US-west-2. **MUST** have the following components in each VPC:
+4. Create 1 VPC, cloudwatch, and configure ECS with Terraform. **MUST** have the following components in each VPC:
     - 2 AZ's
     - 2 Public Subnets
-    - 2 EC2's
-    - 1 Route Table
-    - Security Group Ports: 8000 and 22     
-5. Create a user data script that will install the dependencies below and deploy the Banking application:
+    - 2 Private Subnets
+    - 1 NAT Gateway
+    - 2 Containers
+    - 2 Route Table
+    - 1 ALB
+    - Security Group Ports: 8000      
+5. The Terraform resources you'll need for the ECS configurations:
 ```
-- The following must be installed for the application to run: software-properties-common, add-apt-repository -y ppa:deadsnakes/ppa, python3.7, python3.7-venv, build-essential, libmysqlclient-dev, python3.7-dev
-- Once you activate the virtual environment, the following must be installed: pip install mysqlclient, pip install gunicorn
+- aws_ecs_cluster
+- aws_cloudwatch_log_group
+- aws_ecs_task_definition
+- aws_ecs_service
+- aws_lb_target_group
+- aws_alb
+- aws_alb_listener
 ```
-6. Now create an RDS database: [instructions here](https://scribehow.com/shared/How_to_Create_an_AWS_RDS_Database__zqPZ-jdRTHqiOGdhjMI8Zw)
-7. Change the following MySQL endpoints to your endpoints for each file listed below:
-   - The red, blue, and green areas of the DATABASE_URL you'll need to edit:
-       ![image](https://github.com/kura-labs-org/c4_deployment-6/blob/main/format.png)
-   - database.py:
-     ![image](https://github.com/kura-labs-org/c4_deployment-6/blob/main/database.png)
-     
-   - load_data.py
-     ![image](https://github.com/kura-labs-org/c4_deployment-6/blob/main/load.png)
-     
-   - app.py
-     ![image](https://github.com/kura-labs-org/c4_deployment-6/blob/main/app.png)
-     
-8. **Note:** Once you've deployed the application the first time, you will not need to load the database files again (database.py and load_data.py)
-9. Configure your AWS credentials in Jenkins: [instructions here](https://scribehow.com/shared/How_to_Securely_Configure_AWS_Access_Keys_in_Jenkins__MNeQvA0RSOWj4Ig3pdzIPw)
-10. Now place your Terraform files and user data script in the intTerraform directory
-11. Create a multibranch pipeline and run the Jenkinsfile 
-12. Check your infrastructures and applications
-15. Once you've deployed to both regions, create an application load balancer for US-east-1 and US-west-2: [instructions here](https://scribehow.com/shared/Creating_Load_Balancer_with_Target_Groups_for_EC2_Instances__WjPUNqE4SLCpkcYRouPjjA)
-16. With both infrastructures deployed, is there anything else we should add to our infrastructure?  
+6. Create a new Banking App image (Make sure you create and connect an RDS database to your container)  
+7. Create a multibranch pipeline and run the Jenkinsfile 
+8. Check your infrastructure and applications
+9. Is your infrastructure secure? if yes or no, why? 
+10. When you set your ECS service to 2 desired instances, what happens when you terminate 1 instance? Is this infrastructure fault-tolerant?  
 
