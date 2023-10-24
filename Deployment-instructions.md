@@ -43,7 +43,7 @@ Instance 2:
 - aws_alb
 - aws_alb_listener
 ```
-6. Create a new Banking App image (Make sure you create and connect an RDS database to your container)  
+6. Create a new Banking App image and push it to Docker Hub(Make sure you create and connect an RDS database to your container)  
 7. Create a multibranch pipeline and run the Jenkinsfile 
 8. Check your infrastructure and applications
 9. Is your infrastructure secure? if yes or no, why? 
