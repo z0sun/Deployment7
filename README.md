@@ -1,9 +1,9 @@
 <p align="center">
 <img src="https://github.com/kura-labs-org/kuralabs_deployment_1/blob/main/Kuralogo.png">
 </p>
-<h1 align="center">C4_deployment-6<h1> 
+<h1 align="center">C4_deployment-7<h1> 
 
-Demonstrate your ability to deploy an infrastructure with Terraform.
+Demonstrate your ability to deploy ECS with Terraform.
 
 - Create a separate GitHub repository for this application 
 
@@ -17,10 +17,10 @@ Demonstrate your ability to deploy an infrastructure with Terraform.
   - Purpose
   - Issues
   - Steps
-  - System Diagram (Your diagram must include the default VPC, Regions East and West VPCs)
+  - System Diagram (Your diagram must include the default VPC and ECS VPC)
   - Optimization (How would make this deployment more efficient, if you utilize ChatGPT make sure to explain what your prompt was.)
 
 - Lastly, save your documentation and diagram into your repository. Submit your repository link to the LMS
 
 ## Deployment instructions Link:
--  Link to instructions: https://github.com/kura-labs-org/c4_deployment-6/blob/main/Deployment-instructions.md
+-  Link to instructions: https://github.com/kura-labs-org/c4_deployment-7/blob/main/Deployment-instructions.md
