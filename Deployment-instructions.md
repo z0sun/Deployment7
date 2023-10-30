@@ -3,7 +3,7 @@
 </p>
 
 ## Deployment Instructions:
-1. Change the following resources name tags or name below:
+1. Change the following resources name tags or name values below:
 ```
 main.tf:
 - #Cluster name
