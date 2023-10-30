@@ -3,18 +3,27 @@
 </p>
 
 ## Deployment Instructions:
-1. Change the following resources name tags below:
+1. Change the following resources name tags or name below:
 ```
-VPC:
-- deplpoyment#-vpc-prod, example: deployment6-vpc-prod
-Instances:
-- Function#-prod, example: jenkinsServer01-prod
-Security Groups:
-- purposeSG, example: HttpAcessSG
-Subnets:
-- purposeSubnet#, example: publicSubnet01
-Load Balancer:
-- purpose-region, example: ALB-east
+main.tf:
+- #Cluster name
+- #Task Definition: Family
+- container_definitions:
+    - name
+    - image
+    - containerPort
+- execution_role_arn
+- task_role_arn
+- #ECS Service name
+- container_name
+- container_port
+
+ALB.tf
+- #Traget Group name
+- port
+- #Application Load Balancer name
+
+
 ```
 2.  Use Terraform to create 2 instances in your default VPC for a Jenkins manager and agent architecture (see below for more information)
 3. The following must be installed:
