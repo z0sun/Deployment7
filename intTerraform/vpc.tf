@@ -117,12 +117,12 @@ resource "aws_security_group" "http" {
 
 resource "aws_security_group" "ingress_app" {
   name        = "ingress-api"
-  description = "Allow ingress to API"
+  description = "Allow ingress to APP"
   vpc_id      = aws_vpc.app_vpc.id
 
   ingress {
-    from_port   = 5000
-    to_port     = 5000
+    from_port   = 8000
+    to_port     = 8000
     protocol    = "TCP"
     cidr_blocks = ["0.0.0.0/0"]
   }
