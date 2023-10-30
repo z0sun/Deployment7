@@ -3,7 +3,8 @@
 </p>
 
 ## Deployment Instructions:
-1. Change the following resources name tags or name values below:
+1. Create a new Banking App image and push it to Docker Hub (Make sure you create and connect an RDS database to your app)
+2. Change the following resources name tags or name values below:
 ```
 main.tf:
 - #Cluster name
@@ -33,16 +34,15 @@ Instance 1:
 Instance 2:
 - Terraform and default-jre
 ```
-4. Create 1 VPC, cloudwatch, and configure ECS with Terraform. **MUST** have the following components in each VPC:
+4. Observe the VPC.tf file and make sure the below resources are being created: 
     - 2 AZ's
     - 2 Public Subnets
     - 2 Private Subnets
     - 1 NAT Gateway
-    - 2 Containers
     - 2 Route Table
-    - 1 ALB
-    - Security Group Ports: 8000      
-5. The Terraform resources you'll need for the ECS configurations:
+    - Security Group Ports: 8000
+    - Security Group Ports: 80     
+5. Observe the Terraform resources in the main.tf and ALB.tf:
 ```
 - aws_ecs_cluster
 - aws_cloudwatch_log_group
@@ -51,10 +51,9 @@ Instance 2:
 - aws_lb_target_group
 - aws_alb
 - aws_alb_listener
-```
-6. Create a new Banking App image and push it to Docker Hub(Make sure you create and connect an RDS database to your container)  
-7. Create a multibranch pipeline and run the Jenkinsfile 
-8. Check your infrastructure and applications
-9. Is your infrastructure secure? if yes or no, why? 
-10. When you set your ECS service to 2 desired instances, what happens when you terminate 1 instance? Is this infrastructure fault-tolerant?  
+``` 
+6. Create a multibranch pipeline and run the Jenkinsfile 
+7. Check your infrastructure and applications
+8. Is your infrastructure secure? if yes or no, why? 
+9. When you set your ECS service to 2 desired instances, what happens when you terminate 1 instance? Is this infrastructure fault-tolerant?  
 
