@@ -1,5 +1,5 @@
 #Traget Group
-resource "aws_lb_target_group" "url-app" {
+resource "aws_lb_target_group" "bank-app" {
   name        = "url-app"
   port        = 5000
   protocol    = "HTTP"
@@ -15,7 +15,7 @@ resource "aws_lb_target_group" "url-app" {
 }
 
 #Application Load Balancer
-resource "aws_alb" "url_app" {
+resource "aws_alb" "bank_app" {
   name               = "url-lb"
   internal           = false
   load_balancer_type = "application"
@@ -32,17 +32,17 @@ resource "aws_alb" "url_app" {
   depends_on = [aws_internet_gateway.igw]
 }
 
-resource "aws_alb_listener" "url_app_listener" {
-  load_balancer_arn = aws_alb.url_app.arn
+resource "aws_alb_listener" "bank_app_listener" {
+  load_balancer_arn = aws_alb.bank_app.arn
   port              = "80"
   protocol          = "HTTP"
 
   default_action {
     type             = "forward"
-    target_group_arn = aws_lb_target_group.url-app.arn
+    target_group_arn = aws_lb_target_group.bank-app.arn
   }
 }
 
 output "alb_url" {
-  value = "http://${aws_alb.url_app.dns_name}"
+  value = "http://${aws_alb.bank_app.dns_name}"
 }
