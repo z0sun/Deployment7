@@ -1,3 +1,4 @@
+#Traget Group
 resource "aws_lb_target_group" "url-app" {
   name        = "url-app"
   port        = 5000
@@ -13,6 +14,7 @@ resource "aws_lb_target_group" "url-app" {
   depends_on = [aws_alb.url_app]
 }
 
+#Application Load Balancer
 resource "aws_alb" "url_app" {
   name               = "url-lb"
   internal           = false
