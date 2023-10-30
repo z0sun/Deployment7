@@ -3,7 +3,7 @@
 </p>
 
 ## Deployment Instructions:
-1. Follow the naming convention below for all resources created in AWS:
+1. Change the following resources name tags below:
 ```
 VPC:
 - deplpoyment#-vpc-prod, example: deployment6-vpc-prod
