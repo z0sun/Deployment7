@@ -55,5 +55,5 @@ Instance 2:
 6. Create a multibranch pipeline and run the Jenkinsfile 
 7. Check your infrastructure and applications
 8. Is your infrastructure secure? if yes or no, why? 
-9. When you set your ECS service to 2 desired instances, what happens when you terminate 1 instance? Is this infrastructure fault-tolerant?  
+9. What happens when you terminate 1 instance? Is this infrastructure fault-tolerant?  
 
