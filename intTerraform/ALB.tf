@@ -11,7 +11,7 @@ resource "aws_lb_target_group" "bank-app" {
     path    = "/health"
   }
 
-  depends_on = [aws_alb.url_app]
+  depends_on = [aws_alb.bank_app]
 }
 
 #Application Load Balancer
