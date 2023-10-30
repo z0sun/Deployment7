@@ -14,10 +14,10 @@ resource "aws_ecs_cluster" "aws-ecs-cluster" {
 }
 
 resource "aws_cloudwatch_log_group" "log-group" {
-  name = "/ecs/url-logs"
+  name = "/ecs/bank-logs"
 
   tags = {
-    Application = "url-app"
+    Application = "bank-app"
   }
 }
 
@@ -34,7 +34,7 @@ resource "aws_ecs_task_definition" "aws-ecs-task" {
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
-          "awslogs-group": "/ecs/url-logs",
+          "awslogs-group": "/ecs/bank-logs",
           "awslogs-region": "us-east-1",
           "awslogs-stream-prefix": "ecs"
         }
