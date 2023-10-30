@@ -96,8 +96,8 @@ resource "aws_route" "private_ngw" {
 }
 
 resource "aws_security_group" "http" {
-  name        = "httptre"
-  description = "HTTP traffic"
+  name        = "httpalb"
+  description = "HTTP ALB traffic"
   vpc_id      = aws_vpc.app_vpc.id
 
   ingress {
@@ -116,7 +116,7 @@ resource "aws_security_group" "http" {
 }
 
 resource "aws_security_group" "ingress_app" {
-  name        = "ingress-api"
+  name        = "ingress-app"
   description = "Allow ingress to APP"
   vpc_id      = aws_vpc.app_vpc.id
 
