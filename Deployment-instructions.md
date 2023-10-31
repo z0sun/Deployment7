@@ -54,12 +54,13 @@ Instance 3:
 - aws_alb
 - aws_alb_listener
 ``` 
-6. Edit the Jenkinsfile with your Docker Hub username
-7. Generate an Access Token from your DockerHub
-8. Enter your username and token into Jenkins global credentials
-9. When you enter your username and password, you will also see an ID section; enter {your-username}-dockerhub **EXAMPLE: tsanderson77-dockerhub**
-10. Create a multibranch pipeline and run the Jenkinsfile 
-11. Check your infrastructure and applications
-12. Is your infrastructure secure? if yes or no, why? 
-13. What happens when you terminate 1 instance? Is this infrastructure fault-tolerant?  
+6. Edit the Jenkinsfile with your Docker Hub username on line 4
+7. Edit the Jenkinsfile on lines 31 and 42 with your image name
+8. Generate an Access Token from your DockerHub
+9. Enter your username and token into Jenkins global credentials
+10. When you enter your username and password, you will also see an ID section; enter {your-username}-dockerhub **EXAMPLE: tsanderson77-dockerhub**
+11. Create a multibranch pipeline and run the Jenkinsfile 
+12. Check your infrastructure and applications
+13. Is your infrastructure secure? if yes or no, why? 
+14. What happens when you terminate 1 instance? Is this infrastructure fault-tolerant?  
 
