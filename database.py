@@ -53,6 +53,6 @@ class Transactions(Base):
     
 #engine = create_engine('sqlite:///database.db')
 #Base.metadata.create_all(engine)
-DATABASE_URL = 'mysql+mysqldb://admin:user1234@mydata.cbunsblealyd.us-east-1.rds.amazonaws.com/amazon?charset=utf8mb4'
+DATABASE_URL = 'mysql+mysqldb://admin:user1234@mydata.cb2i8v4whxlv.us-east-1.rds.amazonaws.com/amazon?charset=utf8mb4'
 engine = create_engine(DATABASE_URL, pool_pre_ping=True, echo=True)
 Base.metadata.create_all(engine)
