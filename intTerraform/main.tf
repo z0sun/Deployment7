@@ -41,7 +41,7 @@ resource "aws_ecs_task_definition" "aws-ecs-task" {
       },
       "portMappings": [
         {
-          "containerPort": 8000
+          "containerPort": 5000
         }
       ]
     }
@@ -79,7 +79,7 @@ resource "aws_ecs_service" "aws-ecs-service" {
   load_balancer {
     target_group_arn = aws_lb_target_group.bank-app.arn
     container_name   = "url-container"
-    container_port   = 8000
+    container_port   = 5000
   }
 
 }
