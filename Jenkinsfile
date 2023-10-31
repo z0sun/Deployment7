@@ -1,34 +1,48 @@
 pipeline {
-  agent any
+  agent {label 'awsDeploy2'}
+  environment{
+      DOCKERHUB_CREDENTIALS = credentials(“tsanderson77”-dockerhub')
+}
    stages {
-    stage ('Build') {
+     
+    stage ('Test') {
       steps {
         sh '''#!/bin/bash
         python3.7 -m venv test
         source test/bin/activate
         pip install pip --upgrade
         pip install -r requirements.txt
-        '''
-     }
-   }
-    stage ('test') {
-      steps {
-        sh '''#!/bin/bash
-        source test/bin/activate
         pip install mysqlclient
         pip install pytest
         py.test --verbose --junit-xml test-reports/results.xml
-        ''' 
-      }
-    
-      post{
+        '''
+     }
+
+       post{
         always {
           junit 'test-reports/results.xml'
         }
        
       }
+   }
+     
+    stage ('Build') {
+      steps {
+          sh 'docker build -t tsanderson77/bankapp'
     }
-   
+}
+     stage ('Login') {
+        steps {
+          sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+      }
+}
+
+     stage ('Push') {
+        steps {
+            sh 'docker push -u tsanderson77'
+  }
+     }
+
      stage('Init') {
        agent {label 'awsDeploy'}
        steps {
@@ -62,17 +76,6 @@ pipeline {
          }
     }
    }
-stage('Destroy') {
-    agent {label 'awsDeploy'}
-    steps {
-          withCredentials([string(credentialsId: 'AWS_ACCESS_KEY', variable: 'aws_access_key'),
-              string(credentialsId: 'AWS_SECRET_KEY', variable: 'aws_secret_key')]) {
-                dir('intTerraform') {
-                    sh 'terraform destroy -auto-approve -var="aws_access_key=$aws_access_key" -var="aws_secret_key=$aws_secret_key"'
-                  }
-          }
-    }
-}
 
   }
- }
+}
