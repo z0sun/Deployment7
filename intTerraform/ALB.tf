@@ -1,7 +1,7 @@
 #Traget Group
 resource "aws_lb_target_group" "bank-app" {
   name        = "url-app"
-  port        = 5000
+  port        = 8000
   protocol    = "HTTP"
   target_type = "ip"
   vpc_id      = aws_vpc.app_vpc.id
