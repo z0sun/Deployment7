@@ -59,9 +59,10 @@ Instance 3:
 8. Generate an Access Token from your DockerHub
 9. Enter your username and token into Jenkins global credentials
 10. When you enter your username and password, you will also see an ID section; enter {your-username}-dockerhub **EXAMPLE: tsanderson77-dockerhub**
-11. Create a multibranch pipeline and run the Jenkinsfile 
-12. Check your infrastructure and applications
-13. Is your infrastructure secure? if yes or no, why? 
-14. What happens when you terminate 1 instance? Is this infrastructure fault-tolerant?
-15. Which subnet were the containers deployed in? 
+11. Now install the Docker Pipeline plugin on Jenkins
+12. Create a multibranch pipeline and run the Jenkinsfile 
+13. Check your infrastructure and applications
+14. Is your infrastructure secure? if yes or no, why? 
+15. What happens when you terminate 1 instance? Is this infrastructure fault-tolerant?
+16. Which subnet were the containers deployed in? 
 
