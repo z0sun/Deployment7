@@ -1,8 +1,8 @@
 pipeline {
   agent {label 'awsDeploy2'}
   environment{
-      DOCKERHUB_CREDENTIALS = credentials(“tsanderson77”-dockerhub')
-}
+      DOCKERHUB_CREDENTIALS = credentials('tsanderson77-dockerhub')
+      }
    stages {
      
     stage ('Test') {
