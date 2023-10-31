@@ -39,7 +39,7 @@ pipeline {
 
      stage ('Push') {
         steps {
-            sh 'docker push -u tsanderson77'
+            sh 'docker push -u tsanderson77/bankapp11'
   }
      }
 
