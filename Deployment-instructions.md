@@ -62,5 +62,6 @@ Instance 3:
 11. Create a multibranch pipeline and run the Jenkinsfile 
 12. Check your infrastructure and applications
 13. Is your infrastructure secure? if yes or no, why? 
-14. What happens when you terminate 1 instance? Is this infrastructure fault-tolerant?  
+14. What happens when you terminate 1 instance? Is this infrastructure fault-tolerant?
+15. Which subnet were the containers deployed in? 
 
