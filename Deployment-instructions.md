@@ -3,7 +3,7 @@
 </p>
 
 ## Deployment Instructions:
-1. Create a new Banking App image and push it to Docker Hub (Make sure you create and connect an RDS database to your app)
+1. Create a dockerfile of your Banking App and place it in your repository (Make sure you use the banking app connected to the RDS database)
 2. Change the following resources name tags or name values below:
 ```
 main.tf:
@@ -26,12 +26,14 @@ ALB.tf
 
 
 ```
-2.  Use Terraform to create 2 instances in your default VPC for a Jenkins manager and agent architecture (see below for more information)
+2.  Use Terraform to create 3 instances in your default VPC for a Jenkins manager and agents architecture (see below for more information)
 3. The following must be installed:
 ```
 Instance 1:
 - Jenkins, software-properties-common, add-apt-repository -y ppa:deadsnakes/ppa, python3.7, python3.7-venv, build-essential, libmysqlclient-dev, python3.7-dev
 Instance 2:
+- Docker, default-jre, software-properties-common, add-apt-repository -y ppa:deadsnakes/ppa, python3.7, python3.7-venv, build-essential, libmysqlclient-dev, python3.7-dev
+Instance 3:
 - Terraform and default-jre
 ```
 4. Observe the VPC.tf file and make sure the below resources are being created: 
@@ -52,8 +54,12 @@ Instance 2:
 - aws_alb
 - aws_alb_listener
 ``` 
-6. Create a multibranch pipeline and run the Jenkinsfile 
-7. Check your infrastructure and applications
-8. Is your infrastructure secure? if yes or no, why? 
-9. What happens when you terminate 1 instance? Is this infrastructure fault-tolerant?  
+6. Edit the Jenkinsfile with your Docker Hub username
+7. Generate an Access Token from your DockerHub
+8. Enter your username and token into Jenkins global credentials
+9. When you enter your username and password, you will also see an ID section; enter {your-username}-dockerhub **EXAMPLE: tsanderson77-dockerhub**
+10. Create a multibranch pipeline and run the Jenkinsfile 
+11. Check your infrastructure and applications
+12. Is your infrastructure secure? if yes or no, why? 
+13. What happens when you terminate 1 instance? Is this infrastructure fault-tolerant?  
 
