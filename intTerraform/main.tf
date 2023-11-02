@@ -6,30 +6,30 @@ provider "aws" {
 }
 
 # Cluster
-resource "aws_ecs_cluster" "aws-ecs-cluster" {
+resource "aws_ecs_cluster" "aws-ecs-D6cluster" {
   name = "urlapp-cluster"
   tags = {
-    Name = "url-ecs"
+    Name = "D6bank-cluster"
   }
 }
 
-resource "aws_cloudwatch_log_group" "log-group" {
+resource "aws_cloudwatch_log_group" "D6log-group" {
   name = "/ecs/bank-logs"
 
   tags = {
-    Application = "bank-app"
+    Application = "D6bank-app"
   }
 }
 
 # Task Definition
 
-resource "aws_ecs_task_definition" "aws-ecs-task" {
-  family = "url-task"
+resource "aws_ecs_task_definition" "aws-ecs-D6task" {
+  family = "D6bank-task"
 
   container_definitions = <<EOF
   [
   {
-      "name": "url-container",
+      "name": "D6bank-container",
       "image": "tsanderson77/bankapp11:latest",
       "logConfiguration": {
         "logDriver": "awslogs",
@@ -41,7 +41,7 @@ resource "aws_ecs_task_definition" "aws-ecs-task" {
       },
       "portMappings": [
         {
-          "containerPort": 5000
+          "containerPort": 8000
         }
       ]
     }
@@ -52,16 +52,16 @@ resource "aws_ecs_task_definition" "aws-ecs-task" {
   network_mode             = "awsvpc"
   memory                   = "1024"
   cpu                      = "512"
-  execution_role_arn       = "arn:aws:iam::156156311593:role/ecsTaskExecutionRole"
-  task_role_arn            = "arn:aws:iam::156156311593:role/ecsTaskExecutionRole"
+  execution_role_arn       = "arn:aws:iam::347142919260:role/ecsTaskExecutionRole"
+  task_role_arn            = "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
 
 }
 
 # ECS Service
-resource "aws_ecs_service" "aws-ecs-service" {
-  name                 = "url-ecs-service"
-  cluster              = aws_ecs_cluster.aws-ecs-cluster.id
-  task_definition      = aws_ecs_task_definition.aws-ecs-task.arn
+resource "aws_ecs_service" "aws-ecs-D6service" {
+  name                 = "D6bank-ecs-service"
+  cluster              = aws_ecs_cluster.aws-ecs-D6cluster.id
+  task_definition      = aws_ecs_task_definition.aws-ecs-D6task.arn
   launch_type          = "FARGATE"
   scheduling_strategy  = "REPLICA"
   desired_count        = 2
@@ -78,8 +78,8 @@ resource "aws_ecs_service" "aws-ecs-service" {
 
   load_balancer {
     target_group_arn = aws_lb_target_group.bank-app.arn
-    container_name   = "url-container"
-    container_port   = 5000
+    container_name   = "D6bank-container"
+    container_port   = 8000
   }
 
 }
