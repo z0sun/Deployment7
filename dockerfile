@@ -4,7 +4,7 @@ EXPOSE 8000
 
 RUN git clone https://github.com/djtoler/Deployment7.git
 
-WORKDIR deployment7
+WORKDIR Deployment7
 RUN pip install -r requirements.txt
 
 RUN pip install mysqlclient
