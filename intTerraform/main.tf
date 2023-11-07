@@ -6,31 +6,31 @@ provider "aws" {
 }
 
 # Cluster
-resource "aws_ecs_cluster" "aws-ecs-D6cluster" {
+resource "aws_ecs_cluster" "aws-ecs-cluster" {
   name = "urlapp-cluster"
   tags = {
-    Name = "D6bank-cluster"
+    Name = "D7Cluster"
   }
 }
 
-resource "aws_cloudwatch_log_group" "D6log-group" {
+resource "aws_cloudwatch_log_group" "log-group" {
   name = "/ecs/bank-logs"
 
   tags = {
-    Application = "D6bank-app"
+    Application = "D7bank-app"
   }
 }
 
 # Task Definition
 
-resource "aws_ecs_task_definition" "aws-ecs-D6task" {
-  family = "D6bank-task"
+resource "aws_ecs_task_definition" "aws-ecs-task" {
+  family = "D7bank-task"
 
   container_definitions = <<EOF
   [
   {
       "name": "D6bank-container",
-      "image": "tsanderson77/bankapp11:latest",
+      "image": "z0sun/deploy7bank:latest",
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
@@ -53,15 +53,15 @@ resource "aws_ecs_task_definition" "aws-ecs-D6task" {
   memory                   = "1024"
   cpu                      = "512"
   execution_role_arn       = "arn:aws:iam::347142919260:role/ecsTaskExecutionRole"
-  task_role_arn            = "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
+  task_role_arn            = "arn:aws:iam::347142919260:role/ecsTaskExecutionRole"
 
 }
 
 # ECS Service
-resource "aws_ecs_service" "aws-ecs-D6service" {
-  name                 = "D6bank-ecs-service"
-  cluster              = aws_ecs_cluster.aws-ecs-D6cluster.id
-  task_definition      = aws_ecs_task_definition.aws-ecs-D6task.arn
+resource "aws_ecs_service" "aws-ecs-service" {
+  name                 = "bank-ecs-service"
+  cluster              = aws_ecs_cluster.aws-ecs-cluster.id
+  task_definition      = aws_ecs_task_definition.aws-ecs-task.arn
   launch_type          = "FARGATE"
   scheduling_strategy  = "REPLICA"
   desired_count        = 2
@@ -78,7 +78,7 @@ resource "aws_ecs_service" "aws-ecs-D6service" {
 
   load_balancer {
     target_group_arn = aws_lb_target_group.bank-app.arn
-    container_name   = "D6bank-container"
+    container_name   = "bank-container"
     container_port   = 8000
   }
 
