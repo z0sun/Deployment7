@@ -11,8 +11,6 @@ RUN pip install gunicorn
 
 RUN python database.py
 
-RUN python load_data.py
-
 EXPOSE 8000
 
 CMD ["gunicorn", "--bind", "0.0.0.0", "app:app"]
