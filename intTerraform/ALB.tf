@@ -1,6 +1,6 @@
 #Traget Group
-resource "aws_lb_target_group" "D6bank-app" {
-  name        = "url-app"
+resource "aws_lb_target_group" "bank-app" {
+  name        = "D7bank-app"
   port        = 8000
   protocol    = "HTTP"
   target_type = "ip"
@@ -11,12 +11,12 @@ resource "aws_lb_target_group" "D6bank-app" {
     path    = "/health"
   }
 
-  depends_on = [aws_alb.D6bank_app]
+  depends_on = [aws_alb.bank_app]
 }
 
 #Application Load Balancer
-resource "aws_alb" "D6bank_app" {
-  name               = "url-lb"
+resource "aws_alb" "bank_app" {
+  name               = "D7bank-lb"
   internal           = false
   load_balancer_type = "application"
 
@@ -33,16 +33,16 @@ resource "aws_alb" "D6bank_app" {
 }
 
 resource "aws_alb_listener" "bank_app_listener" {
-  load_balancer_arn = aws_alb.D6bank_app.arn
+  load_balancer_arn = aws_alb.bank_app.arn
   port              = "80"
   protocol          = "HTTP"
 
   default_action {
     type             = "forward"
-    target_group_arn = aws_lb_target_group.D6bank-app.arn
+    target_group_arn = aws_lb_target_group.bank-app.arn
   }
 }
 
 output "alb_url" {
-  value = "http://${aws_alb.D6bank_app.dns_name}"
+  value = "http://${aws_alb.bank_app.dns_name}"
 }
