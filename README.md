@@ -5,7 +5,7 @@
 
 # Purpose
 
-This Banking App is designed using modern tech like Docker, Terraform, and Jenkins, aiming to create a secure and efficient banking platform. With a focus on making it safe for handling lots of transactions, which is important in banking. The app uses Docker for easy and consistent setup, and Terraform helps manage the infrastructure well. Adding Jenkins to the mix has been great for keeping the app updated smoothly. 
+### This Banking App is designed using modern tech like Docker, Terraform, and Jenkins, aiming to create a secure and efficient banking platform. With a focus on making it safe for handling lots of transactions, which is important in banking. The app uses Docker for easy and consistent setup, and Terraform helps manage the infrastructure well. Adding Jenkins to the mix has been great for keeping the app updated smoothly. 
 ------
 
 # Steps 
