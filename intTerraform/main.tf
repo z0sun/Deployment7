@@ -65,7 +65,7 @@ resource "aws_ecs_service" "aws-ecs-service" {
   launch_type          = "FARGATE"
   scheduling_strategy  = "REPLICA"
   desired_count        = 2
-  force_new_deployment = true
+  force_new_deployment = false
 
   network_configuration {
     subnets = [
