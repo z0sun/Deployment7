@@ -7,9 +7,9 @@ provider "aws" {
 
 # Cluster
 resource "aws_ecs_cluster" "aws-ecs-cluster" {
-  name = "urlapp-cluster"
+  name = "url-app"
   tags = {
-    Name = "D7Cluster"
+    Name = "D7-cluster"
   }
 }
 
@@ -17,7 +17,7 @@ resource "aws_cloudwatch_log_group" "log-group" {
   name = "/ecs/bank-logs"
 
   tags = {
-    Application = "D7bank-app"
+    Application = "bank-app"
   }
 }
 
@@ -29,7 +29,7 @@ resource "aws_ecs_task_definition" "aws-ecs-task" {
   container_definitions = <<EOF
   [
   {
-      "name": "bank-container",
+      "name": "bankapp-container-d7",
       "image": "z0sun/deploy7bank:latest",
       "logConfiguration": {
         "logDriver": "awslogs",
@@ -59,7 +59,7 @@ resource "aws_ecs_task_definition" "aws-ecs-task" {
 
 # ECS Service
 resource "aws_ecs_service" "aws-ecs-service" {
-  name                 = "bank-ecs-service"
+  name                 = "D7-ecs-service"
   cluster              = aws_ecs_cluster.aws-ecs-cluster.id
   task_definition      = aws_ecs_task_definition.aws-ecs-task.arn
   launch_type          = "FARGATE"
@@ -78,9 +78,8 @@ resource "aws_ecs_service" "aws-ecs-service" {
 
   load_balancer {
     target_group_arn = aws_lb_target_group.bank-app.arn
-    container_name   = "bank-container"
+    container_name   = "bankapp-container"
     container_port   = 8000
   }
 
 }
-
