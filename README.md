@@ -39,4 +39,25 @@ _______________
 
 # <ins>Diagram</ins>
 
+[Diagram](https://github.com/z0sun/Deployment7/blob/main/Deployment7.drawio.png)
+________________
+
+# <ins>Optimization/Conclusion</ins> 
+
+- Leverage Autoscaling and Load Balancing: Implement autoscaling for your ECS services to ensure that the application can handle varying loads efficiently. Combined with the Application Load Balancer (ALB), this will enhance the application's availability and responsiveness, automatically adjusting to traffic demands while balancing the load across multiple instances.
+
+- Optimize Docker Images and Container Management: Focus on building lean and efficient Docker images by minimizing layers and removing unnecessary dependencies. This will reduce the image size and startup time, leading to faster deployments and scaling. Additionally, manage containers effectively by monitoring their performance and health, and use Docker's best practices to manage container lifecycle.
+
+ - Enhance Monitoring and Logging: Utilize AWS CloudWatch for comprehensive monitoring and logging of both the application and infrastructure. Setting up detailed metrics and alerts for performance, errors, and resource usage will enable proactive issue identification and resolution, improving the overall stability and efficiency of the deployment.
+___________________
+
+# <ins>Deployment Conclusion</ins>
+The successful completion of this deployment marks a significant milestone in our journey towards a robust, cloud-native architecture for the Banking Application. Throughout this process, we have effectively leveraged a suite of powerful technologies including Docker, AWS ECS, RDS, Jenkins, and Terraform, culminating in a scalable, resilient, and efficient system. Key learnings from challenges faced, particularly in aspects of resource management and pipeline optimization, have provided invaluable insights that will guide future enhancements. This deployment not only achieves its immediate operational goals but also lays a solid foundation for continuous integration, development, and scaling, aligning with our commitment to delivering a high-quality, reliable banking service. The collaborative effort and the iterative approach adopted in this project underscore our ability to adapt and evolve in a dynamic technological landscape.
+
+https://github.com/z0sun/Deployment7/blob/main/Retail%20Banking%20Page.png
+
+
+
+
+
 
