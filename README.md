@@ -54,8 +54,9 @@ ___________________
 # <ins>Deployment Conclusion</ins>
 The successful completion of this deployment marks a significant milestone in our journey towards a robust, cloud-native architecture for the Banking Application. Throughout this process, we have effectively leveraged a suite of powerful technologies including Docker, AWS ECS, RDS, Jenkins, and Terraform, culminating in a scalable, resilient, and efficient system. Key learnings from challenges faced, particularly in aspects of resource management and pipeline optimization, have provided invaluable insights that will guide future enhancements. This deployment not only achieves its immediate operational goals but also lays a solid foundation for continuous integration, development, and scaling, aligning with our commitment to delivering a high-quality, reliable banking service. The collaborative effort and the iterative approach adopted in this project underscore our ability to adapt and evolve in a dynamic technological landscape.
 
-https://github.com/z0sun/Deployment7/blob/main/Retail%20Banking%20Page.png
 
+
+![Deployment7 drawio](https://github.com/z0sun/Deployment7/assets/135557197/b12db759-62d3-4f17-95a8-a6a4eab0a732)
 
 
 
