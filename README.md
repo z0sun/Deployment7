@@ -39,7 +39,8 @@ _______________
 
 # <ins>Diagram</ins>
 
-[Diagram](https://github.com/z0sun/Deployment7/blob/main/Deployment7.drawio.png)
+![Deployment7 drawio](https://github.com/z0sun/Deployment7/assets/135557197/11b478b7-e44d-49f9-a3f4-8b3bb0d7a29b)
+
 ________________
 
 # <ins>Optimization/Conclusion</ins> 
